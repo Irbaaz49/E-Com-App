@@ -1,8 +1,20 @@
 import React from 'react';
 import "./checkout.css"
+import CheckoutProduct from './CheckoutProduct';
+import { useStateValue } from './StateProvider';
 import SubTotal from "./SubTotal";
+
  
 function Checkout() {
+const[{basket}, dispatch] = useStateValue();
+
+
+const removeAll = ()=>{
+  dispatch({
+    type : 'REMOVE_ALL',
+  })
+}
+
   return (
     <div className='checkout'>
 
@@ -12,12 +24,16 @@ function Checkout() {
 <div className='checkout__title'>
 
 <h2 className='checkout__title' >Shopping Basket</h2>
-{/* basketItem */}
-{/* basketItem */}
-{/* basketItem */}
-{/* basketItem */}
+{
+  basket.map(item=>
+<CheckoutProduct id={item.id} image={item.image} price={item.price} rating={item.rating} title={item.title} />
+
+  )
+}
 
 </div>
+<button onClick={removeAll}>Remove all</button>
+
 
 
 </div>
