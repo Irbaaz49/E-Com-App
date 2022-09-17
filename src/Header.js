@@ -5,10 +5,17 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { NavLink } from "react-router-dom"
 import { SportsBasketball } from "@mui/icons-material";
 import { useStateValue } from "./StateProvider";
+import { auth } from "./firebase";
 
 
 function Header() {
-const[{basket}, dispatch] = useStateValue();
+const[{basket, user}, dispatch] = useStateValue();
+const handleAuthentication =()=>{
+  if(user){
+    auth.signOut();
+
+  }
+}
   return (
     <div className="header">
       <NavLink to='/'>
@@ -25,10 +32,13 @@ const[{basket}, dispatch] = useStateValue();
       </div>
 
       <div className="header__nav">
-        <NavLink to="/login">
-        <div className="header__option">
-          <span className="header__optionLineOne">Hello Guest</span>
-          <span className="header__optionLineTwo">Sign In</span>
+        <NavLink to={!user && "/login"}>
+        <div onClick={handleAuthentication} className="header__option">
+          <span className="header__optionLineOne">Hello,{user ? user.email.slice(0,user.email.indexOf('@')) : "Guest"}</span>
+          <span className="header__optionLineTwo">
+
+            {user ? 'Sign Out' : 'Sign In'}
+          </span>
         </div>
 </NavLink>
         <div className="header__option">
