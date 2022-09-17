@@ -1,17 +1,25 @@
 import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
+import Login from "./Login";
 import Checkout from "./Checkout"; 
 import { Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
     <>
       <div className="App">
-          <Header />
+          
     <Routes>
-        <Route exact path="/" element={<Home></Home>} />
-        <Route exact path="/checkout" element={<Checkout></Checkout>} />
+        <Route exact path="/" element={<>
+        <Header /><Home></Home>
+        </>} />
+        <Route exact path="/checkout" element={<>
+        <Header/>
+        <Checkout></Checkout>
+        </>} />
+        <Route exact path="/login" element={<Login></Login>} />
 
     </Routes>
       </div>

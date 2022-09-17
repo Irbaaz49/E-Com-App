@@ -32,7 +32,12 @@ const removeAll = ()=>{
 }
 
 </div>
+{
+basket.length > 0 ?
 <button onClick={removeAll}>Remove all</button>
+:
+""
+}
 
 
 
