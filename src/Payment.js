@@ -11,16 +11,31 @@ import { db } from "./firebase";
 
 // value={getBasketTotal(basket)}
 const Payment = () =>{
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 const [{basket,user} , dispatch] = useStateValue();
 // let value = getBasketTotal(basket);
-const TheOrders =(e) =>{
+
+const TheOrders = async (e) =>{
     e.preventDefault();
-    // navigate('/orders');
-    db.ref("user").set({
-        id : user?.uid,
-        item : basket,
-      }).catch(alert);
+    
+    // try {
+        db.collection('users')
+        .doc(user?.uid)
+        .collection('orders')
+        .doc(user?.uid)
+        .set({
+            basket : basket
+        });
+        // if(user)
+        navigate('/orders');
+        dispatch({
+            type : 'REMOVE_ALL'
+        })
+
+    // } catch (error) {
+        // console.log(error)
+    // }
+
 
 }
 // rules_version = '2';
