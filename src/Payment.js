@@ -27,11 +27,14 @@ const TheOrders = async (e) =>{
             basket : basket
         });
         // if(user)
-        navigate('/orders');
-        dispatch({
-            type : 'REMOVE_ALL'
-        })
-
+        // setTimeout(() => {
+            
+            navigate('/orders');
+            dispatch({
+                type : 'REMOVE_ALL'
+            })
+        // }, 2000);
+// 
     // } catch (error) {
         // console.log(error)
     // }
