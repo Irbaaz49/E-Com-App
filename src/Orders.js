@@ -41,7 +41,7 @@ res.docs.map(item=>{
     }
 
   }, [user])
-console.log(orders)
+// console.log(orders)
 // orders.map((ele)=>{
 //     // console.log(ele.basket[0].id);
 //     ele.basket.map((item)=>{

@@ -3,7 +3,8 @@ import { JoinLeft } from "@mui/icons-material";
 
 export const initialState = {
   basket: [],
-  user :null
+  user :null,
+  search :""
 };
 
 export const getBasketTotal = (basket) =>
@@ -62,7 +63,11 @@ const reducer = (state, action) => {
         user: action.user
 
       }
-
+case 'SEARCH_PRODUCT':
+  return {
+    ...state,
+    search : action.search
+  }
 
 
 
