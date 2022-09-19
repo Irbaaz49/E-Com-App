@@ -1,11 +1,21 @@
 import React from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
+import swal from 'sweetalert'
+
+
 
 function Product({ id, title, image, price, rating }) {
   const[{basket}, dispatch] = useStateValue();
   // console.log(basket)
   const addToBasket = () => {
+    swal({
+      title: "Product Added to cart.",
+      icon: "success",
+      button : false,
+      // timer: 1000,
+      dangerMode: false,
+    })
     //dispatch the item in the data layer
     dispatch({
       type: "ADD_TO_BASKET",
@@ -20,7 +30,8 @@ function Product({ id, title, image, price, rating }) {
   };
 
   return (
-    <div className="product">
+    
+     <div className="product">
       <div className="product__info">
         <p>{title}</p>
         <p className="product__price">
@@ -39,7 +50,8 @@ function Product({ id, title, image, price, rating }) {
       <img src={image} alt="" />
 
       <button onClick={addToBasket}>Add to Basket</button>
-    </div>
+      </div>
+    
   );
 }
 

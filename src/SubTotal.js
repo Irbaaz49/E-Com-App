@@ -32,14 +32,14 @@ function SubTotal() {
         prefix={"₹"}
       />
 {/* <button onClick={console.log(search)}>click</button> */}
-<button onClick={()=> {
+<button onClick={(e)=> {
   
   if(user){
   navigate('/payment');
   }else{
     navigate('/login');
   }
-  }} >Proceed to Checkout</button>
+  }} disabled={basket.length>0 ?'':'true'}>Proceed to Checkout</button>
     </div>
   )
 }

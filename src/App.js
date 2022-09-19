@@ -9,6 +9,11 @@ import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider"
 import  Payment  from "./Payment"
 import Orders from "./Orders"
+import Register from "./Register";
+// import { loadStripe } from "@stripe/stripe-js"
+//react flip move
+//react spinner
+//stripe
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -53,6 +58,7 @@ dispatch({
         <Header/>
         <Orders></Orders>
         </>} />
+        <Route exact path="/register" element={<Register></Register>} />
         <Route exact path="/login" element={<Login></Login>} />
 
     </Routes>

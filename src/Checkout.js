@@ -24,10 +24,12 @@ const removeAll = ()=>{
 <div className='checkout__title'>
 <h3>Hello,{user ? user.email.slice(0,user.email.indexOf('@')) : "Guest"}</h3>
 <h2 className='checkout__title' >Shopping Basket</h2>
-{
+{basket.length > 0 ?(
   basket.map(item=>
 <CheckoutProduct id={item.id} image={item.image} price={item.price} rating={item.rating} title={item.title} />
 
+  )):(
+    <p>Your basket is empty</p>
   )
 }
 
