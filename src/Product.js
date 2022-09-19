@@ -13,7 +13,7 @@ function Product({ id, title, image, price, rating }) {
       title: "Product Added to cart.",
       icon: "success",
       button : false,
-      // timer: 1000,
+      timer: 1000,
       dangerMode: false,
     })
     //dispatch the item in the data layer
