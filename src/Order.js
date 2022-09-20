@@ -1,5 +1,7 @@
 import React from "react";
 import CheckoutProduct from "./CheckoutProduct";
+import { memo } from "react";
+import "./Order.css"
 
 
 const Order = ({item}) =>{
@@ -18,6 +20,7 @@ const Order = ({item}) =>{
         image={item.image}
         price={item.price}
         rating={item.rating}
+        hideButton
 
 
         
@@ -28,4 +31,4 @@ const Order = ({item}) =>{
     )
 }
 
-export default Order
+export default memo(Order);

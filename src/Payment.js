@@ -4,21 +4,17 @@ import './Payment.css'
 import { useStateValue } from "./StateProvider"
 import { NavLink, useNavigate } from "react-router-dom";
 import { db } from "./firebase";
-// import { getBasketTotal } from "./reducer"
-// import { v4 as uuid } from "uuid/";
 
 
 
-// value={getBasketTotal(basket)}
+
 const Payment = () =>{
     const navigate = useNavigate();
 const [{basket,user} , dispatch] = useStateValue();
-// let value = getBasketTotal(basket);
 
 const TheOrders = async (e) =>{
-    e.preventDefault();
+    // e.preventDefault();
     
-    // try {
         db.collection('users')
         .doc(user?.uid)
         .collection('orders')
@@ -26,30 +22,14 @@ const TheOrders = async (e) =>{
         .set({
             basket : basket
         });
-        // if(user)
-        // setTimeout(() => {
-            
+       
             navigate('/orders');
             dispatch({
                 type : 'REMOVE_ALL'
             })
-        // }, 2000);
-// 
-    // } catch (error) {
-        // console.log(error)
-    // }
-
+      
 
 }
-// rules_version = '2';
-// service cloud.firestore {
-//   match /databases/{database}/documents {
-//     match /{document=**} {
-//       allow read, write: if
-//           request.time < timestamp.date(2022, 10, 17);
-//     }
-//   }
-// }
 
 
     return (
@@ -68,8 +48,8 @@ checkout (<NavLink to='/checkout'>{basket?.length} items</NavLink>)
 </div>
 <div className="payment_address">
     <p> {user?.email}</p>
-    <p>123 , street line</p>
-    <p>Hyderabad India</p>
+    <p> 123 , Amazon Street </p>
+    <p> India</p>
 </div>
 
 
@@ -100,7 +80,8 @@ checkout (<NavLink to='/checkout'>{basket?.length} items</NavLink>)
         </div>
 
         <div className="payment__details">
-
+<p>UPI <input type='radio' /> </p>
+<br/>
 <button onClick={TheOrders}>Buy now</button>
              {/* redirect to orders page and empty the basket */}
         </div>

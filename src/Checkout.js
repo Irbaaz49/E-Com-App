@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import "./checkout.css"
 import CheckoutProduct from './CheckoutProduct';
 import { useStateValue } from './StateProvider';
@@ -29,7 +30,7 @@ const removeAll = ()=>{
 <CheckoutProduct id={item.id} image={item.image} price={item.price} rating={item.rating} title={item.title} />
 
   )):(
-    <p>Your basket is empty</p>
+    <p>Your basket is empty : <NavLink to='/'>Go Add Something</NavLink></p>
   )
 }
 

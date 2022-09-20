@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { db } from "./firebase";
-// import './Orders.css'
+import './Orders.css'
 import { useStateValue } from "./StateProvider";
-import Order from './Order'
+import Order from './Order';
+import { memo } from 'react';
+
 
 function Orders() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -66,7 +68,7 @@ res.docs.map(item=>{
     )
 }
 
-export default Orders
+export default memo(Orders);
 
 
 // {

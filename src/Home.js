@@ -6,11 +6,12 @@ import { products } from "./diplayProducts";
 // import "~slick-carousel/slick/slick.css"; 
 // import "~slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
+import { moreProducts } from "./MoreProduct.js"
+import { NavLink } from "react-router-dom";
 
 
 function Home() {
-  const[{search}, dispatch] = useStateValue();
+  const[{search,user}, dispatch] = useStateValue();
 
  
   const settings = {
@@ -21,22 +22,22 @@ function Home() {
     slidesToScroll: 1,
     autoplay: true,
       speed: 2000,
-      autoplaySpeed: 8000,
+      autoplaySpeed: 6000,
       cssEase: "linear"
   };
 const settings2 = {
-    dots: true,
+    dots: false,
     infinite: true,
-    speed: 500,
+    speed: 2000,
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 800,
+    autoplaySpeed: 6000,
     responsive: [
         {
             breakpoint: 1400,
             settings: {
-                dots: true,
+                dots: false,
                 infinite: true,
                 slidesToShow: 4,
                 slidesToScroll: 1,
@@ -45,7 +46,7 @@ const settings2 = {
         {
             breakpoint: 900,
             settings: {
-                dots: true,
+                dots: false,
                 infinite: true,
                 slidesToShow: 3,
                 slidesToScroll: 1,
@@ -54,7 +55,7 @@ const settings2 = {
         {
             breakpoint: 680,
             settings: {
-                dots: true,
+                dots: false,
                 infinite: true,
                 slidesToShow: 2,
                 slidesToScroll: 1,
@@ -123,6 +124,35 @@ if(val.title.toLowerCase().includes(search.toLowerCase()))
 
       </div>
     </div>
+    <hr/>
+    <div className="home-product-slider">
+
+<h2 className="sec-title">More Products</h2>
+
+<Slider {...settings2}>
+    {moreProducts && moreProducts.map((product)=>{
+            return(
+                // <>
+<NavLink to='/' className='link'>
+                 <div className="product-card" >
+            <div className="product-image">
+                <img src= {product.image} alt=""/>
+            </div>
+            <p>{product.title}</p>
+            <p>₹ {product.price}</p>
+        </div>
+</NavLink>
+            )
+        })
+    }
+</Slider>
+</div>
+
+
+
+
+
+
     <footer>
    
 
@@ -161,8 +191,8 @@ if(val.title.toLowerCase().includes(search.toLowerCase()))
         <ul>
           <li><h3>Let Us Help You</h3></li>
           <li><a href="#">Your Account</a></li>
-          <li><a href="#">Your Orders</a></li>
-          <li><a href="#">Shipping Rates &amp; Policies</a></li>
+          <li><NavLink to={user?'/orders':'/login'}>Your Orders</NavLink></li>
+          <li><a href='https://www.amazon.in/'>Shipping Rates &amp; Policies</a></li>
           <li><a href="#">Amazon Prime</a></li>
           <li><a href="#">Returns &amp; Replacements</a></li>
           <li><a href="#">Manage Your Content and Devices</a></li>
@@ -170,7 +200,7 @@ if(val.title.toLowerCase().includes(search.toLowerCase()))
           <li><a href="#">Help</a></li>
         </ul>
         <ul className="copy text-center">
-          <li>&copy; 1996-2017, Amazon.com, Inc. or its affiliates</li>
+          <li>&copy; 1996-2022, Amazon.com, Made by Irbaaz Hussain</li>
         </ul>
       </div>
 
