@@ -2,9 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import "./checkout.css"
 import CheckoutProduct from './CheckoutProduct';
-import { useStateValue } from './StateProvider';
-import SubTotal from "./SubTotal";
-
+import { useStateValue } from '../MainData/StateProvider';
+import SubTotal from '../SubTotal/SubTotal';
  
 function Checkout() {
 const[{basket, user}, dispatch] = useStateValue();

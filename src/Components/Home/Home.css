@@ -1,0 +1,152 @@
+.home {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1500px;
+
+}
+.home__row{
+  z-index: 1;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 50px;
+  padding: 10px;
+  z-index: 1;
+  margin-left: 5px;
+  margin-right: 5px;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: stretch;
+  justify-items: center;
+  position: relative;
+  bottom: 130px;
+
+}
+
+
+/* .home__image {
+  width: 100%;
+  z-index: -1;
+  margin-bottom: -150px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 40%));
+} */
+.banners{
+  height: 26vw;
+}
+
+.banners img{
+  width: 100%;
+  z-index: -1;
+  /* margin-bottom: -150px; */
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 40%));
+  height: 500px;
+}
+.slides .slick-prev,
+.slides .slick-next {
+  top: 50%;
+}
+
+.slick-next{
+  margin-right: 5%;
+}
+
+.slick-prev{
+  margin-left: 5%;
+  z-index: 99;
+}
+
+.slick-slide .product-card{
+  margin: 0 10px;
+}
+
+
+.product-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  /* border: 2px solid grey; */
+  border-radius: 4px;
+  background-color: white;
+}
+
+.product-image{
+  width: 100%;
+  height: 200px;
+  overflow-y: hidden;
+  object-fit: contain;
+}
+
+.product-image img{
+  width: 100%;
+  object-fit: contain;
+
+}
+
+.product-card p{
+  font-size: 15px;
+  font-weight: 500;
+  margin: 8px 0;
+}
+
+
+@media(max-width: 900px){
+  .product-image{
+      height: 120px;
+  }
+
+  .product-card{
+      height: 280px;
+  }
+}
+
+
+.home-product-slider{
+  margin-bottom: 50px;
+}
+.sec-title{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+.link{
+  color: black;
+}
+
+
+
+
+@media (max-width: 700px) {
+  .slick-slider{
+    width: 183%;
+  }
+  .banners img{
+    object-fit: cover;
+    height: 380px;
+  }
+  .banners{
+    height: 157vw;
+  }
+  .home__row{
+    top: -290px;
+    grid-template-columns: auto auto;
+    left :120px;
+  }
+  .product > img {
+    max-height: 100px;
+  }
+  hr{
+    position: relative;
+    width: 175%;
+    bottom: 209px;
+  }
+  .home-product-slider{
+    position: relative;
+    bottom: 138px;
+  }
+  
+  
+  }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Product.css";
-import { useStateValue } from "./StateProvider";
+import { useStateValue } from "../MainData/StateProvider";
 import swal from 'sweetalert'
 
 

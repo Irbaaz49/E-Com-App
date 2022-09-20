@@ -1,10 +1,9 @@
 import React from "react"
-import CheckoutProduct from "./CheckoutProduct";
+import CheckoutProduct from "../Checkout/CheckoutProduct";
 import './Payment.css'
-import { useStateValue } from "./StateProvider"
+import { useStateValue } from "../MainData/StateProvider";
 import { NavLink, useNavigate } from "react-router-dom";
-import { db } from "./firebase";
-
+import { db } from "../Firebase/firebase";
 
 
 
@@ -13,7 +12,7 @@ const Payment = () =>{
 const [{basket,user} , dispatch] = useStateValue();
 
 const TheOrders = async (e) =>{
-    // e.preventDefault();
+    e.preventDefault();
     
         db.collection('users')
         .doc(user?.uid)

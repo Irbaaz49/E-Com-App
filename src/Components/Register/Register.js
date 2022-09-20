@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "./Register.css";
-// import {PulseLoader} from "react-spinners/PulseLoader";
 import PulseLoader from "react-spinner"
 import { NavLink, useNavigate } from "react-router-dom";
-
-import { auth } from "./firebase";
+import { auth } from "../Firebase/firebase"
 
 function Register() {
   const navigate = useNavigate();

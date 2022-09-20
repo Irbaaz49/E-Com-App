@@ -3,10 +3,8 @@ import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { NavLink } from "react-router-dom"
-import { SportsBasketball } from "@mui/icons-material";
-import { useStateValue } from "./StateProvider";
-import { auth } from "./firebase";
-
+import { useStateValue } from '../MainData/StateProvider'
+import { auth } from "../Firebase/firebase"
 
 function Header() {
   

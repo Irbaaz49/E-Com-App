@@ -20,3 +20,13 @@
     padding: 10px;
     border-bottom: 1px solid lightgray;
   }
+
+
+  @media (max-width: 700px) {
+.checkout{
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 164%;
+}
+    
+  }

@@ -67,3 +67,24 @@
     margin-right: 10px;
     color: white;
   }
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  @media (max-width: 700px) {
+    .header {   
+     width: max-content;
+    }
+  .header__logo{
+    width: 70px;
+  }
+  }

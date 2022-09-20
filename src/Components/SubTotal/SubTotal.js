@@ -1,8 +1,10 @@
 import React,{ useState } from 'react';
 import "./SubTotal.css"
 import CurrencyFormat from 'react-currency-format';
-import { useStateValue } from "./StateProvider"
-import { getBasketTotal } from "./reducer"
+// import { useStateValue } from "./StateProvider"
+import { useStateValue } from '../MainData/StateProvider';
+// import { getBasketTotal } from "./reducer"
+import { getBasketTotal } from "../MainData/reducer"
 import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 

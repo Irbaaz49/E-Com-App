@@ -1,19 +1,17 @@
 import React , { useEffect } from "react"
 import "./App.css";
-import Header from "./Header";
-import Home from "./Home";
-import Login from "./Login";
-import Checkout from "./Checkout"; 
+import Header from "./Components/Header/Header";
+import Home from "./Components/Home/Home";
+import Login from "./Components/Login/Login";
+import Checkout from "./Components/Checkout/Checkout"; 
 import { Routes, Route } from "react-router-dom";
-import { auth } from "./firebase";
-import { useStateValue } from "./StateProvider"
-import  Payment  from "./Payment"
-import Orders from "./Orders"
-import Register from "./Register";
-// import { loadStripe } from "@stripe/stripe-js"
-//react flip move
-//react spinner
-//stripe
+import { auth } from "./Components/Firebase/firebase";
+import { useStateValue } from "./Components/MainData/StateProvider";
+import  Payment  from "./Components/Payment/Payment"
+import Orders from "./Components/Order/Orders"
+import Register from "./Components/Register/Register";
+import Footer from "./Components/Footer/Footer";
+
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -45,23 +43,28 @@ dispatch({
     <Routes>
         <Route exact path="/" element={<>
         <Header /><Home></Home>
+        <Footer/>
         </>} />
         <Route exact path="/checkout" element={<>
         <Header/>
         <Checkout></Checkout>
+        <Footer/>
         </>} />
         <Route exact path="/payment" element={<>
         <Header/>
         <Payment></Payment>
+        <Footer/>
         </>} />
         <Route exact path="/orders" element={<>
         <Header/>
         <Orders></Orders>
+        <Footer/>
         </>} />
         <Route exact path="/register" element={<Register></Register>} />
         <Route exact path="/login" element={<Login></Login>} />
 
     </Routes>
+    
       </div>
     </>
   );
