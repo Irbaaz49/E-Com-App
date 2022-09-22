@@ -7,6 +7,10 @@ import Slider from "react-slick";
 import { moreProducts } from "../Product/MoreProduct.js"
 import { NavLink } from "react-router-dom";
 
+import Mone from "../Topdata/Mone";
+import Mtwo from "../Topdata/Mtwo";
+import Mthree from "../Topdata/Mthree";
+
 function Home() {
   const[{search,user}, dispatch] = useStateValue();
 
@@ -82,6 +86,13 @@ const settings2 = {
 </div>
 
 </Slider>
+<div className="Home_homeContentA__wQGyB">
+<Mone/>
+<Mtwo/>
+<Mthree/>
+
+  </div>
+
    <div className="home">
       
       <div className="home__container">

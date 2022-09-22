@@ -14,13 +14,16 @@
 
   .product__rating {
     display: flex;
+    z-index: 100;
   }
   
   .product > img {
-    max-height: 200px;
+    max-height: 150px;
     width: 100%;
     object-fit: contain;
+    margin-top: 50px;
     margin-bottom: 15px;
+    z-index: -1;
   }
   
   .product > button {
