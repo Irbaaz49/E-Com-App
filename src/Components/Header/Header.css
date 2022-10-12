@@ -82,7 +82,7 @@
 
   @media (max-width: 700px) {
     .header {   
-     width: max-content;
+     width: 183%;
     }
   .header__logo{
     width: 70px;
