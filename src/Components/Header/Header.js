@@ -5,7 +5,7 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { NavLink } from "react-router-dom"
 import { useStateValue } from '../MainData/StateProvider'
 import { auth } from "../Firebase/firebase"
-
+import editamazon from "../img/editamazon.png";
 function Header() {
   
 const[{basket, user}, dispatch] = useStateValue();
@@ -36,7 +36,7 @@ return (
     <div className="header">
       <NavLink to='/'>
       <img
-        src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+        src={editamazon}
         className="header__logo"
         alt="img"
       />

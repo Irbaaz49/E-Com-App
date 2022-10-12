@@ -6,7 +6,10 @@ import { products } from "../Product/diplayProducts";
 import Slider from "react-slick";
 import { moreProducts } from "../Product/MoreProduct.js"
 import { NavLink } from "react-router-dom";
-
+import w11 from "../img/w11.jpg";
+import w22 from "../img/w22.jpg";
+import w33 from "../img/w33.jpg";
+import w44 from "../img/w44.jpg";
 import Mone from "../Topdata/Mone";
 import Mtwo from "../Topdata/Mtwo";
 import Mthree from "../Topdata/Mthree";
@@ -72,16 +75,16 @@ const settings2 = {
        <Slider {...settings}>
 
 <div className="banners">
-  <img src="https://m.media-amazon.com/images/I/71LyiPYjaNL._SX3000_.jpg" alt=""/>
+  <img src={w11} alt=""/>
 </div>
 <div className="banners">
-  <img src="https://m.media-amazon.com/images/I/713QMfztDGL._SX3000_.jpg" alt=""/>
+  <img src={w22} alt=""/>
 </div>
 <div className="banners">
-    <img src="https://m.media-amazon.com/images/I/71ZMRzVcenL._SX3000_.jpg" alt=""/>
+    <img src={w33} alt=""/>
 </div>
 <div className="banners">
-    <img             src="https://m.media-amazon.com/images/I/611wsb3NSWL._SX3000_.jpg"
+    <img             src={w44}
  alt=""/>
 </div>
 

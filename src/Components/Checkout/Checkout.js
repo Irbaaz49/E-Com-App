@@ -4,7 +4,8 @@ import "./checkout.css"
 import CheckoutProduct from './CheckoutProduct';
 import { useStateValue } from '../MainData/StateProvider';
 import SubTotal from '../SubTotal/SubTotal';
- 
+import c11 from "../img/c11.jpg";
+
 function Checkout() {
 const[{basket, user}, dispatch] = useStateValue();
 
@@ -19,7 +20,7 @@ const removeAll = ()=>{
     <div className='checkout'>
 
 <div className='checkout__left'>
-    <img src='https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg' alt='img'/>
+    <img src={c11} alt='img'/>
 
 <div className='checkout__title'>
 <h3>Hello,{user ? user.email.slice(0,user.email.indexOf('@')) : "Guest"}</h3>
