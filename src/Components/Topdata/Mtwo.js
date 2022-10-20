@@ -31,7 +31,7 @@ const MainTwo = () => {
   ];
   return (
     <div className="mainTwo">
-      <h3 className="head">Amazon Pay | Book your travel tickets</h3>
+      <h3 className="head">Ecom Pay | Book your travel tickets</h3>
       <div className="mainContent">
         {mainContentArray.map((item) => {
           return (
