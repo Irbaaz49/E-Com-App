@@ -1,7 +1,8 @@
 
 import React, { useState } from "react";
 import "./Login.css";
-import PulseLoader from "react-spinner"
+import PulseLoader from "react-spinner";
+import ecm from "../img/ecm.png";
 
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -36,7 +37,7 @@ function Login() {
       <NavLink to="/">
         <img
           className="login__logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png"
+          src={ecm}
           alt="amazon-logo"
         />
       </NavLink>
