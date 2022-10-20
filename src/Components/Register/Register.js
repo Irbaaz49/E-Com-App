@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./Register.css";
 import PulseLoader from "react-spinner"
 import { NavLink, useNavigate } from "react-router-dom";
-import { auth } from "../Firebase/firebase"
+import { auth } from "../Firebase/firebase";
+import ecm from "../img/ecm.png";
 
 function Register() {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ function Register() {
     <div className="register">
       <NavLink to="/">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png"
+          src={ecm}
           alt="amazon-logo"
           className="register__logo"
         />
